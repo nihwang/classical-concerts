@@ -1,3 +1,4 @@
 class Work < ActiveRecord::Base
-	has_many :concert_works
+	has_many :pieces
+	belongs_to :composer
 end

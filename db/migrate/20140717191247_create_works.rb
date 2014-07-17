@@ -1,4 +1,4 @@
-class CreateWorks < ActiveRecord::Migration
+Workclass CreateWorks < ActiveRecord::Migration
   def change
     create_table :works do |t|
     	t.string :name

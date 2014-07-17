@@ -1,3 +1,3 @@
 class Orchestra < ActiveRecord::Base
-	has_many :concert_works
+	has_many :pieces
 end

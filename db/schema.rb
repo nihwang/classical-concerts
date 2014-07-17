@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717191314) do
+ActiveRecord::Schema.define(version: 20140717201629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,16 +20,9 @@ ActiveRecord::Schema.define(version: 20140717191314) do
     t.string "name"
   end
 
-  create_table "concert_works", force: true do |t|
-    t.integer "orchestra_id"
-    t.integer "work_id"
-    t.integer "soloist_id"
-  end
-
   create_table "concerts", force: true do |t|
     t.integer "hall_id"
     t.integer "conductor_id"
-    t.integer "concert_works_id"
   end
 
   create_table "conductors", force: true do |t|
@@ -43,6 +36,13 @@ ActiveRecord::Schema.define(version: 20140717191314) do
 
   create_table "orchestras", force: true do |t|
     t.string "name"
+  end
+
+  create_table "pieces", force: true do |t|
+    t.integer "concert_id"
+    t.integer "orchestra_id"
+    t.integer "work_id"
+    t.integer "soloist_id"
   end
 
   create_table "soloists", force: true do |t|
